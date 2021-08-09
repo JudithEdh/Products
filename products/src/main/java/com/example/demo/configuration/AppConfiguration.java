@@ -1,15 +1,15 @@
 package com.example.demo.configuration;
 
-import org.modelmapper.ModelMapper;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 @Configuration
 public class AppConfiguration {
 
-    @Bean
-    public ModelMapper modelMapper() {
-        return new ModelMapper();
-    }
+	@Configuration
+	public class AppConfig {
+		
+	}
 
 }
