@@ -43,4 +43,8 @@ public class ProductsService{
 	public List<Products> findProductsByCategory(String category) {
 		return this.productsRepository.findProductsByCategory(category);
 	}
+	
+	public List<Products> findProductsByTag(String tag) {
+		return this.productsRepository.findProductsByTag(tag);
+	}
 }

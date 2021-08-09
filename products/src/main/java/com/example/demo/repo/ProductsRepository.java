@@ -18,8 +18,8 @@ public interface ProductsRepository extends JpaRepository<Products, String>{
 	@Query("SELECT c FROM Products c WHERE c.Categories = ?1")
 	List<Products> findProductsByCategory(String category);
 	
-	//@Query("SELECT c FROM Products c WHERE c.Tag = ?1")
-	//List<Products> findProductsByTag(String tag);
+	@Query("SELECT c FROM Products c WHERE c.Tag = ?1")
+	List<Products> findProductsByTag(String tag);
 }
 
 

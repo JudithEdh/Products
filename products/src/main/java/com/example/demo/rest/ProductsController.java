@@ -49,4 +49,10 @@ public class ProductsController{
 	public ResponseEntity<List<Products>> getProductsByCategory(@PathVariable String category){
 		return ResponseEntity.ok(this.productsService.findProductsByCategory(category));
 	}
+	
+	@CrossOrigin
+	@GetMapping("/tag/{tag}")
+	public ResponseEntity<List<Products>> getProductsByTag(@PathVariable String tag){
+		return ResponseEntity.ok(this.productsService.findProductsByTag(tag));
+	}
 }
