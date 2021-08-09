@@ -27,20 +27,26 @@ public class ProductsController{
 	}
 	
 	
-	@GetMapping("/getproducts")
+	@GetMapping("/all")
 	public ResponseEntity<List<Products>> getAllProducts(){
 		return ResponseEntity.ok(this.productsService.readAllProducts());
 	}
 	
 	@CrossOrigin
-	@GetMapping("getProductsById/{id}")
+	@GetMapping("/id/{id}")
 	public ResponseEntity<Products> getProductsById(@PathVariable String id){
 		return ResponseEntity.ok(this.productsService.findProductsById(id));
 	}
 	
 	@CrossOrigin
-	@GetMapping("getProductsByName/{name}")
+	@GetMapping("/name/{name}")
 	public ResponseEntity<List<Products>> getProductsByName(@PathVariable String name){
 		return ResponseEntity.ok(this.productsService.findProductsByName(name));
+	}
+	
+	@CrossOrigin
+	@GetMapping("/category/{category}")
+	public ResponseEntity<List<Products>> getProductsByCategory(@PathVariable String category){
+		return ResponseEntity.ok(this.productsService.findProductsByCategory(category));
 	}
 }
