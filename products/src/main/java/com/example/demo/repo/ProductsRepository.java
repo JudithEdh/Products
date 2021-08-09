@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.Query;
 @Repository
 public interface ProductsRepository extends JpaRepository<Products, String>{
 
-	@Query("SELECT c FROM Products c WHERE c.Name like %?1% OR c.Title like %?1%")
+	@Query("SELECT c FROM Products c WHERE c.Name like %?1% OR c.Title like %?1% OR c.Description like %?1%")
 	List<Products> findProductsByName(String name);
 	
 	@Query("SELECT c FROM Products c WHERE c.Categories = ?1")
